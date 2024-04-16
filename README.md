@@ -42,6 +42,7 @@ npm install или yarn install
 ## Использованные технологии 
 1. **Frontend**
     + *React.js* (react / react-dom and react-scripts)
+    + *react-beautiful-dnd* (lib for drag-and-drop)
 2. **Backend**
     + *Node.js*
     + *MongoDB*
