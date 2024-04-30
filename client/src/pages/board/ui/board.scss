@@ -1,3 +1,4 @@
+
 .list {
     display: flex;
     justify-content: space-between;
@@ -7,21 +8,40 @@
     .left-container {
         display: flex;
         justify-content: space-between;
-        width: 400px;
+        width: 500px;
+
 
         .logo{
-            background-color: black;
-            color: #fff;
+            background-color: var(--reverse-background-color);
+            color: var(--reverse-text-color);
             text-align: center;
             padding: 5px;
             border-radius: 5px;
         }
         .input{
             align-self: flex-end;
-            height: 35px;
             width: 300px;
-            padding: 10px;
+            height: 100%;
+            padding: 0 10px;
         }
+        
+        .language-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px; 
+            width: 40px; 
+            border: none;
+            border-radius: 9999px;
+            background-color: var(--background-color);
+            transition: background 100ms linear;
+        }
+        .language-button:hover {
+          background-color: var(--light-background-color);
+        }
+        .feather-globe {
+          color: var(--text-color);
+      }
     }   
 
     .right-container {
@@ -31,7 +51,6 @@
 
         .allsides {
             padding: 5px 10px;
-            color: #000;
             background:
               linear-gradient(currentColor 0 0) 0 0,
               linear-gradient(currentColor 0 0) 0 0,
@@ -40,6 +59,7 @@
             background-size: var(--d, 0) 3px, 3px var(--d, 0);
             background-repeat: no-repeat;
             transition: 0.5s;
+            color: var(--text-color);
           }
           .allsides:hover {
             --d: 100%;

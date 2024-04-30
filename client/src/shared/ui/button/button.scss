@@ -1,0 +1,16 @@
+.theme-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px; 
+    width: 40px; 
+    border: none;
+    border-radius: 9999px;
+    background-color: var(--background-color);
+}
+.theme-button:hover {
+    background-color: var(--light-background-color);
+  }
+.feather-moon {
+    color: var(--text-color);
+}
