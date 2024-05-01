@@ -4,11 +4,7 @@ import './button.scss'
 export const Button = () => {
     const {theme, setTheme} = useTheme()
     const handleLightThemeClick = () => {
-        if (theme === 'light') {
-            setTheme('dark')
-        } else {
-            setTheme('light') 
-        }
+        (theme === 'light') ? setTheme('dark') : setTheme('light');
     }
     return (
         <button className='theme-button' onClick={handleLightThemeClick}> 

@@ -1,0 +1,8 @@
+{
+    "login": {
+        "message": "войти"
+    }, 
+    "signup": {
+        "message": "регнуться"
+    }
+}

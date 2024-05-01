@@ -1,0 +1,8 @@
+{
+    "login": {
+        "message": "login"
+    }, 
+    "signup": {
+        "message": "signup"
+    }
+}
