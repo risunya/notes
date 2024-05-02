@@ -2,10 +2,11 @@ import { ThemeButton } from '../../../shared/ui/themeButton';
 import { LanguageButton } from '../../../shared/ui/languageButton';
 import { SearchButton } from '../../../shared/ui/searchButton';
 
-import './board.scss';
+import './home.scss';
 import { useTranslation } from 'react-i18next';
+import { Board } from '../../../shared/ui/board';
 
-export const Board = () => {
+export const Home = () => {
     const {t} = useTranslation();
     return (
        <>
@@ -23,6 +24,7 @@ export const Board = () => {
                 </div>
             </div>
         </div>
+        <Board/>
        </>
     )
 }

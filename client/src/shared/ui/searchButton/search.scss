@@ -8,6 +8,7 @@
   border-radius: 9999px;
   background-color: var(--background-color);
   transition: background 100ms linear;
+  position:relative;
 }
 .search-button:hover {
 background-color: var(--light-background-color);
@@ -16,47 +17,8 @@ background-color: var(--light-background-color);
 color: var(--text-color);
 }
 .input {
+  left: 10px;
   transition: .3s;
   margin: 15px; 
 }
-
-
-
-
-
-// .box {
-//   display: flex;
-//   justify-content: center;
-//   height: 40px;
-//   padding: 0 16px;
-
-//     .search {
-//       display: flex;
-//       align-items: center;
-//       .input {
-//         width: 350px;
-//         height: 24px;
-//         display: none;
-//       }
-//       .feather-search {
-//         display: block;
-//         height: 24px; 
-//         width: 24px; 
-//       }
-//     }   
-   
-// }
-
-// .box:hover {
-//     .search {
-//       transition: .3s;
-//       .input {
-//         width: 350px;
-//         display: block;
-//       }
-//       .feather-search {
-//         display: none;
-//       }
-//     }
-// }
 
