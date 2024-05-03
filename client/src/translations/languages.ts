@@ -20,11 +20,5 @@ i18n
                     signup: "регнуться"
                 }
             },
-            es: {
-                translation: {
-                    login: "iniciar sesión",
-                    signup: "inscribirse"
-                }
-            },
         }
     })

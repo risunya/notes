@@ -24,6 +24,7 @@ export const Home = () => {
                 </div>
             </div>
         </div>
+        <div className='capture'>Доска</div>
         <Board/>
        </>
     )
