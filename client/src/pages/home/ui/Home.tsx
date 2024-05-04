@@ -1,31 +1,16 @@
-import { ThemeButton } from '../../../shared/ui/themeButton';
-import { LanguageButton } from '../../../shared/ui/languageButton';
-import { SearchButton } from '../../../shared/ui/searchButton';
-
 import './home.scss';
-import { useTranslation } from 'react-i18next';
-import { Board } from '../../../shared/ui/board';
+import { Header } from '../../../widgets/header/ui/header';
+import { Board } from '../../../widgets/board';
+import { PatchHeader } from '../../../widgets/patch-header';
+import { Footer } from '../../../widgets/footer';
 
 export const Home = () => {
-    const {t} = useTranslation();
     return (
-       <>
-        <div className="header">
-            <div className="list">
-                <a className='logo' href='#'>Notes</a>
-                <div className='left-container'>
-                    <ThemeButton/>   
-                    <LanguageButton/>
-                    <SearchButton/>
-                </div>
-                <div className='right-container'>
-                    <a className='allsides' href='#'>{t("login")}</a>
-                    <a className='allsides' href='#'>{t("signup")}</a>
-                </div>
-            </div>
-        </div>
-        <div className='capture'>Доска</div>
-        <Board/>
-       </>
+        <>
+            <PatchHeader/>
+            <Header/>
+            <Board/>
+            <Footer/>
+        </>
     )
 }

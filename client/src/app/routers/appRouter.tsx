@@ -1,7 +1,7 @@
-import { Layout } from "../layout/layout"
+import { Home } from "../../pages/home"
 
 export const AppRouter = () => {
     return (
-        <Layout/>
+        <Home/>
     )
 }

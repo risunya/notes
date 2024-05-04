@@ -43,6 +43,7 @@ npm install или yarn install
 1. **Frontend**
     + *React.js* (react / react-dom and react-scripts)
     + *react-beautiful-dnd* (lib for drag-and-drop)
+    +  *i18next* + *react-i18next* (for easy language switch)
 2. **Backend**
     + *Node.js*
     + *MongoDB*

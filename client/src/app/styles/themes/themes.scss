@@ -1,4 +1,3 @@
-@import '../styles/index.scss';
 
 html {
     transition: background-color 100ms linear;
@@ -7,18 +6,22 @@ html {
 
 html[data-theme='light'] {
     --text-color:black;
+    --second-text-color: rgb(8 126 164 / 1);
     --reverse-text-color:white;
     --background-color: white;
     --reverse-background-color: black;
-    --light-background-color: rgba(35, 39, 47, .05);
+    --light-background-color: #23272f0d;
+    --dark-background-color: #afa9a90d;
 }
 
 html[data-theme='dark'] {
     --text-color:white;
+    --second-text-color: #58c4dc;
     --reverse-text-color:black;
-    --background-color: rgb(35 39 47 / 1);
+    --background-color: #23272f;
     --reverse-background-color: white;
-    --light-background-color: rgba(175, 169, 169, 0.05);
+    --light-background-color: #afa9a90d;
+    --dark-background-color: #23272f0d;
 }
 
 

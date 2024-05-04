@@ -15,18 +15,22 @@ export const LanguageButton = () => {
     }
 
     const LanguageList = () => {
-        return (
+        return (            
+        <div className='popup-menu-wrapper'>
             <ul className='popup-menu'>
                 <li className='item'><a onClick={() => changeLanguage('ru')}>Russian</a></li>
                 <li className='item'><a onClick={() => changeLanguage('en')}>English</a></li>
             </ul>
+        </div>
+
+                
         )
     }
 
 
     return (
-        <>
-            <button className='language-button' onClick={toggle} > 
+        <div className='language-button-box' onMouseEnter={toggle}  onMouseLeave={toggle}>
+            <button className='language-button'> 
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather-globe">
                     <circle cx="12" cy="12" r="10"></circle>
                     <line x1="2" y1="12" x2="22" y2="12"></line>
@@ -34,6 +38,6 @@ export const LanguageButton = () => {
                 </svg>
             </button>
             {isOpen && <LanguageList />}
-        </>
+        </div>
     );
 };

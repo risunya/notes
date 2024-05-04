@@ -10,15 +10,25 @@ i18n
         resources: {
             en: {
                 translation: {
-                    login: "login",
-                    signup: "sign up"
+                    news:'News and 1.2.21 patch. ',
+                    newslink:'Learn more.',
+                    login: "Login",
+                    signup: "Sign up",
+                    board: 'Board',
+                    coded: 'Coded by ',
                 }
             },
             ru: {
                 translation: {
-                    login: "логин",
-                    signup: "регнуться"
+                    news:'Новости и 1.2.21 патч. ',
+                    newslink:'Узнать больше.',
+                    login: "Логин",
+                    signup: "Регнуться",
+                    board: 'Доска', 
+                    coded: 'Код написал ',                   
                 }
             },
         }
     })
+
+    
