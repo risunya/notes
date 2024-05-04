@@ -4,11 +4,14 @@ import {App} from './app/App'
 
 import './index.css'
 
+import "./translations/languages"
+
+
 const container = document.querySelector('#root') as HTMLElement
 const root = createRoot(container)
 
 root.render(
     <React.StrictMode>
-        <App />
+         <App />
     </React.StrictMode>
 )

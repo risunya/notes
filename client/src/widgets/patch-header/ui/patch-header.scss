@@ -1,0 +1,27 @@
+.patch-header {
+    color: var(--text-color);
+    font-family:'Courier New', Courier, monospace;
+    font-weight: 700;
+    font-size: 18px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-background-color);
+    .patch-heder__text {
+        padding: 10px 0;
+        margin: 0 auto;
+        width: 1280px;
+        text-align: center;
+    }
+    .link {
+        color: var(--second-text-color);
+        padding: 5px;
+        border-radius: 99999px;
+        transition: .3s;
+    }
+    .link:hover {
+        background-color: var(--light-background-color);
+    }
+   
+}

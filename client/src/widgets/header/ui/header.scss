@@ -1,0 +1,72 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    background-color: var(--background-color);
+    box-shadow: 0 1px var(--light-background-color);
+
+  }
+  .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    background-color: var(--light-background-color);
+    box-shadow: 5px var(--light-background-color) ;
+    color: var(--second-text-color);
+    border-radius: 5px;
+  }
+  .navbar {
+      width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 50px;
+  
+      .left-container {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          width: 400px;
+      }   
+  
+      .right-container {
+          display: flex;
+          justify-content: flex-end;
+          width: 500px;
+  
+          .allsides {
+            font-size: 24px;
+            margin-left: 30px;
+              padding: 5px 10px;
+              background:
+                linear-gradient(currentColor 0 0) 0 0,
+                linear-gradient(currentColor 0 0) 0 0,
+                linear-gradient(currentColor 0 0) 100% 100%,
+                linear-gradient(currentColor 0 0) 100% 100%;
+              background-size: var(--d, 0) 3px, 3px var(--d, 0);
+              background-repeat: no-repeat;
+              transition: 0.5s;
+              color: var(--text-color);
+            }
+            .allsides:hover {
+              background-color: var(--light-background-color);
+              --d: 100%;
+            }
+            .allsides:active {
+              transition: .1s;
+            }
+      }
+    
+  
+  }
+  
+  .capture {
+    text-align: center;
+    margin: 20px 0;
+  }

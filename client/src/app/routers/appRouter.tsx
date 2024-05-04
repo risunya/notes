@@ -1,7 +1,7 @@
-import { Board } from "../../pages/board"
+import { Home } from "../../pages/home"
 
 export const AppRouter = () => {
     return (
-        <Board/>
+        <Home/>
     )
 }

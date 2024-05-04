@@ -1,37 +1,36 @@
+.header {
+  height: 50px;
+}
+.logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5px;
+  background-color: var(--reverse-background-color);
+  color: var(--reverse-text-color);
+  border-radius: 5px;
+}
 .list {
     display: flex;
     justify-content: space-between;
-    margin-top: 50px;
-    margin: 50px 0;
+    height: 50px;
 
     .left-container {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
+        align-items: center;
         width: 400px;
-
-        .logo{
-            background-color: black;
-            color: #fff;
-            text-align: center;
-            padding: 5px;
-            border-radius: 5px;
-        }
-        .input{
-            align-self: flex-end;
-            height: 35px;
-            width: 300px;
-            padding: 10px;
-        }
     }   
 
     .right-container {
         display: flex;
-        justify-content: space-between;
-        width: 400px;
+        justify-content: flex-end;
+        width: 500px;
 
         .allsides {
+          font-size: 24px;
+          margin-left: 30px;
             padding: 5px 10px;
-            color: #000;
             background:
               linear-gradient(currentColor 0 0) 0 0,
               linear-gradient(currentColor 0 0) 0 0,
@@ -40,16 +39,21 @@
             background-size: var(--d, 0) 3px, 3px var(--d, 0);
             background-repeat: no-repeat;
             transition: 0.5s;
+            color: var(--text-color);
           }
           .allsides:hover {
+            background-color: var(--light-background-color);
             --d: 100%;
           }
           .allsides:active {
-            background-color: green;
             transition: .1s;
           }
     }
-    
+  
 
+}
 
+.capture {
+  text-align: center;
+  margin: 20px 0;
 }

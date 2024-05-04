@@ -1,0 +1,16 @@
+.board-content {
+    background-color: var(--background-color);
+    margin-bottom: 20px;
+
+
+    .capture {
+        margin: 0 auto;
+        padding: 15px 0;
+        width: 1280px;
+        color: var(--text-color);
+        box-shadow: 0 1px var(--light-background-color);
+    }
+    .board-list {
+        justify-content: space-between;
+    }
+}
