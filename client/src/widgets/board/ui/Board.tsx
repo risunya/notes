@@ -1,89 +1,127 @@
-import './board.scss'
+import './board.scss';
 import { useTranslation } from 'react-i18next';
-import { DndContext, closestCorners } from '@dnd-kit/core';
+import { DndContext, KeyboardSensor, PointerSensor, TouchSensor, closestCorners, useSensor, useSensors } from '@dnd-kit/core';
 import { useState } from 'react';
-import { arrayMove } from '@dnd-kit/sortable';
+import { arrayMove, sortableKeyboardCoordinates } from '@dnd-kit/sortable';
 import { Column } from '../../column/ui/Column';
 
-
-
 export const Board = () => {
-    const {t} = useTranslation();
-    const [tasks, setTasks] = useState([
-        {
-            id: "1",
-            title: 'Задание 1',
-            isCompleted: false,
-        },
-        {
-            id: "2",
-            title: 'Задание 2',
-            isCompleted: false,
-        },
-        {
-            id: "3",
-            title: 'Задание 3',
-            isCompleted: true,
-        },
-        {
-            id: "4",
-            title: 'Задание 2',
-            isCompleted: false,
-        },
-        {
-            id: "5",
-            title: 'Задание 3',
-            isCompleted: true,
-        },
-        {
-            id: "6",
-            title: 'Задание 2',
-            isCompleted: false,
-        },
-        {
-            id: "7",
-            title: 'Задание 3',
-            isCompleted: true,
-        },
-        {
-            id: "8",
-            title: 'Задание 2',
-            isCompleted: false,
-        },
-        {
-            id: "9",
-            title: 'Задание 3',
-            isCompleted: true,
-        },
-    ])
+    const { t } = useTranslation();
 
+    // Используем useState, но выбираем из изначальных данных или local storage
+    const [tasks, setTasks] = useState(() => {
+        const storedTasks = localStorage.getItem('todolist');
+        return storedTasks ? JSON.parse(storedTasks) : [
+            {
+                id: "1",
+                title: 'Пример задания 1',
+                isCompleted: false,
+                backgroundVaruable: 'var(--first-notes-color)',
+            },
+            {
+                id: "2",
+                title: 'Пример задания 2',
+                isCompleted: false,
+                backgroundVaruable: 'var(--first-notes-color)',
+            },
+            {
+                id: "3",
+                title: 'Пример задания 3',
+                isCompleted: false,
+                backgroundVaruable: 'var(--first-notes-color)',
+            },
+            // Добавляем еще шесть задач для заполнения трех колонок по три задачи в каждой
+            {
+                id: "4",
+                title: 'Пример задания 4',
+                isCompleted: false,
+                backgroundVaruable: 'var(--first-notes-color)',
+            },
+            {
+                id: "5",
+                title: 'Пример задания 5',
+                isCompleted: false,
+                backgroundVaruable: 'var(--first-notes-color)',
+            },
+            {
+                id: "6",
+                title: 'Пример задания 6',
+                isCompleted: false,
+                backgroundVaruable: 'var(--first-notes-color)',
+            },
+            {
+                id: "7",
+                title: 'Пример задания 7',
+                isCompleted: false,
+                backgroundVaruable: 'var(--first-notes-color)',
+            },
+            {
+                id: "8",
+                title: 'Пример задания 8',
+                isCompleted: false,
+                backgroundVaruable: 'var(--first-notes-color)',
+            },
+            {
+                id: "9",
+                title: 'Пример задания 9',
+                isCompleted: false,
+                backgroundVaruable: 'var(--first-notes-color)',
+            },
+        ];
+    });
 
-    const getTaskPos = id => tasks.findIndex(task => task.id === id)
-    const handleDragEnd = (event) => {
-        const {active, over} = event;
- 
-        if(active.id === over.id) return;
-
-        setTasks(tasks => {
-            const originalPos = getTaskPos(active.id)
-            const newPos = getTaskPos(over.id)
-
-            return arrayMove(tasks, originalPos, newPos)
-        })
+    const addTask = (title) => {
+        setTasks((task) => [...tasks, {
+            id: tasks.length + 1, title
+        }])
     }
 
+    const getTaskPos = (id) => tasks.findIndex(task => task.id === id);
+
+    const handleDragEnd = (event) => {
+        const { active, over } = event;
+
+        if (active.id === over.id) return;
+
+        setTasks((tasks) => {
+            const originalPos = getTaskPos(active.id);
+            const newPos = getTaskPos(over.id);
+            
+            const updatedTasks = arrayMove(tasks, originalPos, newPos);
+
+            // Запись обновленного списка в локальное хранилище
+            localStorage.setItem("todolist", JSON.stringify(updatedTasks));
+
+            return updatedTasks;
+        });
+    };
+
+    const sensors = useSensors(
+        useSensor(PointerSensor),
+        useSensor(TouchSensor),
+        useSensor(KeyboardSensor, {
+            coordinateGetter: sortableKeyboardCoordinates
+        })
+    );
+
+    // Разделите задачи на три массива по три задачи в каждом
+    const columnsTasks = [
+        tasks.slice(0, 3),
+        tasks.slice(3, 6),
+        tasks.slice(6, 9)
+    ];
 
     return (
-            <div className='board-content'>
-                <div className='capture'>{t('board')}</div>
-
-                
-                 <div className="board-list">
-                 <DndContext onDragEnd={handleDragEnd} collisionDetection={closestCorners}>
-                    <Column tasks={tasks}/>
-                 </DndContext>                  
-                </div> 
-            </div>
-    )
-}
-
+        <div className='board-content'>
+            <div className='capture'>{t('board')}</div>
+            <div className="board-list">
+                <DndContext sensors={sensors} onDragEnd={handleDragEnd} collisionDetection={closestCorners}>
+                    {/* Отображаем три колонки */}
+                    {columnsTasks.map((columnTasks, index) => (
+                        <Column key={index} tasks={columnTasks} />
+                    ))}
+                </DndContext>
+            </div> 
+        </div>
+    );
+};

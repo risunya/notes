@@ -1,8 +1,25 @@
 .task {
     color: var(--text-color);
+    height: 340px;
+    width: 340px;
     margin: 15px;
     padding: 15px;
     background-color: var(--light-background-color);
     display: flex;
     flex-direction: column;
+    box-shadow: 
+    inset 0 -3em 3em var(--light-background-color),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    touch-action: none;
+    transition: .1s;
+
+    .task-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+.task:active {
+    box-shadow: none;
 }
