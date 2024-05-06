@@ -4,8 +4,9 @@ import { ThemeButton } from '../../../shared/ui/themeButton';
 import './header.scss';
 import { useTranslation } from 'react-i18next';
 
-export const Header = () => {
-    const {t} = useTranslation();
+export const Header = ({ handleClick, isOpenLoginForm }) => {
+    const { t } = useTranslation();
+
     return (
        <div className='header'>
         <div className="navbar">
@@ -16,10 +17,10 @@ export const Header = () => {
                     <SearchButton/>
                 </div>
                 <div className='right-container'>
-                    <a className='allsides' href='#'>{t("login")}</a>
+                    <a className='allsides' href='#' onClick={handleClick}>{t("login")}</a>
                     <a className='allsides' href='#'>{t("signup")}</a>
                 </div>
             </div>
        </div>
-    )
-}
+    );
+};

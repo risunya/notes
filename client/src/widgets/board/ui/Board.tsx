@@ -104,12 +104,6 @@ export const Board = () => {
         })
     );
 
-    // Разделите задачи на три массива по три задачи в каждом
-    const columnsTasks = [
-        tasks.slice(0, 3),
-        tasks.slice(3, 6),
-        tasks.slice(6, 9)
-    ];
 
     return (
         <div className='board-content'>
@@ -117,9 +111,7 @@ export const Board = () => {
             <div className="board-list">
                 <DndContext sensors={sensors} onDragEnd={handleDragEnd} collisionDetection={closestCorners}>
                     {/* Отображаем три колонки */}
-                    {columnsTasks.map((columnTasks, index) => (
-                        <Column key={index} tasks={columnTasks} />
-                    ))}
+                        <Column tasks={tasks} />
                 </DndContext>
             </div> 
         </div>
