@@ -1,16 +1,23 @@
+import React from 'react';
 import './loginmenu.scss';
 
-export const LoginMenu = ({ handleClick, isOpenLoginForm }) => {
+interface LoginMenuProps {
+    handleClick: () => void;
+    isOpenLoginForm: boolean;
+}
+
+export const LoginMenu: React.FC<LoginMenuProps> = ({ handleClick, isOpenLoginForm }) => {
     return (
         <div className="login-menu-wrapper" onClick={handleClick}>
-            <div className='login-menu'>
+            {isOpenLoginForm && (
+                <div className='login-menu'>
                     <div className='form-header'>Sign In</div> 
                     <div className="form">
                         <div className="inputBox"> 
-                            <input type="text" value="Username"/>
+                            <input type="text" defaultValue="Username"/>
                         </div> 
                         <div className="inputBox"> 
-                            <input type="text" value="Password"/>
+                            <input type="password" defaultValue="Password"/>
                         </div> 
                         <div className="links">
                             <a href="#">Forgot Password</a>
@@ -20,9 +27,9 @@ export const LoginMenu = ({ handleClick, isOpenLoginForm }) => {
                             <input type="submit" value="Login"/> 
                         </div> 
                     </div>
-            </div>
+                </div>
+            )}
         </div>
-    )
-}
+    );
+};
 
-    

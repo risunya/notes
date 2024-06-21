@@ -4,7 +4,14 @@ import './taskitem.scss';
 import { SecondIcon } from './icons/SecondIcon';
 import { ThirdIcon } from './icons/ThirdIcon';
 
-export const Task = ({ id, title, isCompleted, backgroundVaruable }) => {
+type TaskProps = {
+    id: string;
+    title: string;
+    isCompleted: boolean;
+    backgroundVaruable: string;
+  };
+
+export const Task: React.FC<TaskProps> = ({ id, title, isCompleted, backgroundVaruable }) => {
     const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id });
 
     const style = {
